@@ -1,8 +1,8 @@
 Tipos de Caching
  - Navegador
  - CDN
- - Servidor web 
- - Servidor de aplicação
+ - Servidor web (o próprio servidor, NGINX, nuster, HAProxy, Varnish, Squid)
+ - Servidor de aplicação (cache de action, redis, memcache)
 
 
 - Minificar JS e CSS
