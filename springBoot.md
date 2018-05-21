@@ -14,4 +14,8 @@
   
   - Como toda ferramenta java, o CLI é instalado adicionando-o ao PATH do sistema.
   - É possível criar um projeto SpringBoot através do site start.spring.io, do CLI, do Eclipse e da IDE Spring
+  - Durante a crição do Projeto é que as dependências são selecionadas e um esqueleto de aplicação é criado 
+  - Na pasta resourses/static ficam os JS, CSS, fonts
+  - Na pasta resources/layout ficam as páginas dinamicas
+  
   
