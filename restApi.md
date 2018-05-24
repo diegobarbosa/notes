@@ -14,7 +14,7 @@
   
   - Certo:
     - POST https://api.mysite.com/v1/clientes //no corpo enviar dados em JSON
-    - PUT https://api.mysite.com/v1/clientes/1000/endereco //no corpo enviar dados em JSON
+    - PUT https://api.mysite.com/v1/clientes/1000/enderecos //no corpo enviar dados em JSON
     
 # Plural
 Utilize o nome dos recursos no plural.
@@ -22,8 +22,8 @@ Utilize o nome dos recursos no plural.
     - https://api.mysite.com/v1/cliente
     - https://api.mysite.com/v1/cliente/10/fatura
     
-   - Certo
-      - https://api.mysite.com/v1/clientes
+  - Certo
+    - https://api.mysite.com/v1/clientes
     - https://api.mysite.com/v1/clientes/10/faturas
     
 # Autenticação
