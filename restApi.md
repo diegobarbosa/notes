@@ -3,7 +3,10 @@
 O Texto a seguir é um resumo de uma espeficação/documentação/arquitetura/desing de uma api rest. Vária idéias e textos
 foram coletados de https://docs.api.fastnotas.com/.
 
-
+# Boas práticas
+    - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
+    - asdf
+ 
 # CURL
 
 É uma ótima ferramenta para testar os endpoints.
@@ -23,7 +26,7 @@ Versionar pela URL é a boa prática. Através de custom http headers podem ocor
   - https://api.mysite.com/v1/
   
 # Verbos HTTP
- Usar os verbos HTTP e não nomes indicando ações:
+ Usar os verbos HTTP com substantivos e não verbos indicando ações:
   - Errado:
     - https://api.mysite.com/v1/cadastrarCliente
     - https://api.mysite.com/v1/alterarEnderecoDoCliente
@@ -42,6 +45,90 @@ Utilize o nome dos recursos no plural.
     - https://api.mysite.com/v1/clientes
     - https://api.mysite.com/v1/clientes/10/faturas
     
+# Use sub-resources for relations
+    
+- GET /cars/711/drivers/ Returns a list of drivers for car 711
+- GET /cars/711/drivers/4 Returns driver #4 for car 711
+    
+# Use HTTP headers for serialization formats
+
+Both, client and server, need to know which format is used for the communication. The format has to be specified in the HTTP-Header.
+
+Content-Type defines the request format.
+Accept defines a list of acceptable response formats.
+    
+# Use HATEOAS
+
+Hypermedia as the Engine of Application State is a principle that hypertext links should be used to create a better navigation through the API.
+
+           {
+              "id": 711,
+              "manufacturer": "bmw",
+              "model": "X5",
+              "seats": 5,
+              "drivers": [
+               {
+                "id": "23",
+                "name": "Stefan Jauker",
+                "links": [
+                 {
+                 "rel": "self",
+                 "href": "/api/v1/drivers/23"
+                }
+               ]
+              }
+             ]
+            }
+    
+    
+# Provide filtering, sorting, field selection and paging for collections
+    
+## Filtering:
+
+Use a unique query parameter for all fields or a query language for filtering.
+
+    GET /cars?color=red Returns a list of red cars
+    GET /cars?seats<=2 Returns a list of cars with a maximum of 2 seats
+
+## Sorting:
+
+Allow ascending and descending sorting over multiple fields.
+
+    GET /cars?sort=-manufactorer,+model
+
+This returns a list of cars sorted by descending manufacturers and ascending models.
+
+## Field selection
+
+Mobile clients display just a few attributes in a list. They don’t need all attributes of a resource. Give the API consumer the ability to choose returned fields. This will also reduce the network traffic and speed up the usage of the API.
+
+    GET /cars?fields=manufacturer,model,id,color
+
+## Paging
+
+Use limit and offset. It is flexible for the user and common in leading databases. The default should be limit=20 and offset=0
+
+    GET /cars?offset=10&limit=5
+
+To send the total entries back to the user use the custom HTTP header: X-Total-Count.
+
+Links to the next or previous page should be provided in the HTTP header link as well. It is important to follow this link header values instead of constructing your own URLs.
+    
+# Use error payloads
+
+All exceptions should be mapped in an error payload. Here is an example how a JSON payload should look like.
+    
+        {
+      "errors": [
+       {
+        "userMessage": "Sorry, the requested resource does not exist",
+        "internalMessage": "No car found in the database",
+        "code": 34,
+        "more info": "http://dev.mwaysolutions.com/blog/api/v1/errors/12345"
+       }
+      ]
+    } 
+
     
 # Endpoints da API
 
