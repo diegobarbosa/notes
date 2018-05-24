@@ -1,11 +1,12 @@
-- Formatos de Endereço:
+# Formatos de Endereço:
   - https://api.mysite.com/v1/
   - https://www.mysite.com/api/v1/
   
-  
+# Versionamento
 - Versionar pela URL é a boa prática. Através de custom http headers podem ocorrer problemas.
   - https://api.mysite.com/v1/
   
+# Verbos HTTP
 - Usar os verbos HTTP e não nomes indicando ações:
   - Errado:
     - https://api.mysite.com/v1/cadastrarCliente
@@ -16,13 +17,13 @@
     - PUT https://api.mysite.com/v1/cliente/1000/endereco //no corpo enviar dados em JSON
     
     
-- Autenticação
+# Autenticação
 
   É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
   Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**
 
 
-- Paginação
+# Paginação
 
   Usar parâmetros query para paginação:
   
@@ -47,7 +48,7 @@ Per-Page 	|Objetos por página
 
 
 
-- WebHooks
+# WebHooks
 
   São eventos que acontecem dentro da api que notificam via POST uma URL pré determinada pelo cliente.
   Podem ser implementadas através de um componente de QUEUE, RabbitMQ, onde um evento é agendado/colocado na fila 
@@ -63,7 +64,7 @@ Per-Page 	|Objetos por página
 
   Para resolver esse problema, inverte-se a responsabilidade da notificação: O Fast Notas avisará você quando alguma ação ocorrer. Este aviso é realizado através de um HTTP POST que o Fast Notas faz em uma URL que você pode configurar na plataforma. Estes avisos são chamados de webhooks.
   
-**Formato e método de envio**
+## Formato e método de envio
   
 Todas as requisições geradas a partir de webhooks são efetuadas com o método POST, com o conteúdo no corpo (body) da requisição no formato JSON, incluindo os seguintes headers:
 
@@ -75,11 +76,11 @@ User-Agent | 	mysSiteHookshot/1.0
   A plataforma espera que sua aplicação responda com o código HTTP 2XX (200, 201, etc) em no máximo 20 segundos. Códigos de redirecionamento (3XX) não serão seguidos e serão considerados como falha.
 
 
-**Retentativas
+## Retentativas
 
 A plataforma Fast Notas irá efetuar 15 retentativas de envio caso seu sistema esteja fora do ar ou responda com um código HTTP diferente de 2xx. As retentativas são enviadas em intervalos progressivos durante aproximadamente 48 horas. Depois desse período a notificação é descartada.
 
-**Conteúdo da requisição
+## Conteúdo da requisição
 
 Como mencionado acima, o conteúdo da requisição estará contido em seu no corpo (body), no formato JSON.
 O conteúdo do atributo data irá depender do tipo de evento enviado e respeitará o mesmo formato da API REST.
@@ -97,21 +98,37 @@ O conteúdo do atributo data irá depender do tipo de evento enviado e respeitar
     }``
 
 
-**Boas práticas
+## Boas práticas
 
 Em condições normais de operação dificilmente esse limite será atingido, porém más práticas de integração podem comprometer o limite rapidamente.
 
-**Evite polling
+### Evite polling
 
 Polling é o nome do procedimento usado para buscar o status de determinada informação em intervalos de tempo consecutivos. Sabemos que é comum implementar rotinas diárias de consulta de status. Enquanto este procedimento funciona satisfatoriamente com um número baixo de registros, você poderá ultrapassar o limite de requisições caso o número de consultas aumente.
 
 É justamente por isso que a plataforma Fast Notas oferece os webhooks. Em vez de gastar recursos computacionais com polling, configure a plataforma Fast Notas para avisar seu backend via POST imediatamente quando um evento ocorrer. Com isso você não desperdiça recursos e garante que sua plataforma estará com os dados sempre atualizados. Se você precisar de um tipo de webhook que ainda não esteja disponível, converse com nossa equipe e ficaremos felizes em criar um novo tipo de disparo que ajude você a se manter dentro do limite de requisições.
 
-**Use cache
+### Use cache
 
 Recursos que não são atualizados frequentemente podem ser armazenados em cache localmente. Por exemplo, em vez de efetuar uma requisição de listagem de documentos toda vez que um cliente quiser visualizar o status da sua nota fiscal, faça uma única consulta à API e armazene o resultado, configurando o tempo de expiração que julgar necessário. Soluções baseadas em memcache ou Redis funcionam muito bem nesses casos.
 
 
+# HTTP status codes
+
+A API segue o padrão que usa códigos de resposta HTTP convencionais para indicar o sucesso ou fracasso de uma solicitação da API. Em geral, os códigos na gama 2xx indicam sucesso, os códigos na gama 4xx indicam um erro dada a informação fornecida (por exemplo, um parâmetro necessário foi omitido, ou informado com um valor errado, etc) e os códigos na gama indicam um 5xx de erro com os servidores da lista (esses são raros).
+
+
+
+Código |	Significado
+-------|-------------
+200 - OK |	Request realizado com sucesso
+201 - Created |	Cadastro criado com sucesso
+204 - No Content |	Requisição sem conteúdo
+400 - Bad Request |	Erro de sintaxe JSON no corpo do request
+404 - Not Found |	Registro não encontrado
+422 - Unprocessable Entity |	Parâmetros inválidos. Verificar erro na resposta
+429 - Too Many Requests |	Limite de requisições excedido
+500 - Internal Server Error |	Erro interno do servidor
 
 
   
