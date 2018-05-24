@@ -30,6 +30,7 @@ Utilize o nome dos recursos no plural.
 #Endpoints da API
 
 Método  |	Endpoint |	Descrição
+--------|--------| ---------------
 GET |	/company 	| Retorna dados da empresa
 GET |	/companies |	Retorna dados das empresas afiliadas à empresa parceira
 GET |	/companies/:id |	Retorna uma empresa específica
