@@ -35,7 +35,13 @@ Parâmetro | Descrição
 **page:** default 1 | Implementação de uma paginação de resultados do objeto
 **per_page:** Default:50 | Retorna n objetos por página
 
+Todas as requisições de listagem retornam os dados referentes à paginação através dos seguintes headers http:
 
+HTTP Header| 	Descrição
+-----------| -----------
+Current-Page| 	Página atual
+Total-Pages | Total de páginas
+Per-Page 	|Objetos por página
 
   Referência: https://docs.api.fastnotas.com/#pagina-o
 
