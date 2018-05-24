@@ -26,6 +26,29 @@ Utilize o nome dos recursos no plural.
     - https://api.mysite.com/v1/clientes
     - https://api.mysite.com/v1/clientes/10/faturas
     
+    
+#Endpoints da API
+
+Método  |	Endpoint |	Descrição
+GET |	/company 	| Retorna dados da empresa
+GET |	/companies |	Retorna dados das empresas afiliadas à empresa parceira
+GET |	/companies/:id |	Retorna uma empresa específica
+POST |	/companies |	Cria uma empresa
+DELETE |	/companies/:id |	Inativa uma empresa
+PUT |	/companies/:id |	Atualiza os parâmetros de uma empresa
+GET |	/customers |	Retorna todos clientes
+POST |	/customers 	| Cria um cliente
+GET |	/customers/:id |	Retorna um cliente
+
+GET | /companies/{company_id}/serviceinvoices | Listar as Notas Fiscais de Serviço (NFSE)
+POST |  /companies/{company_id}/serviceinvoices | Emitir uma Nota Fiscal de Serviço (NFSE)
+DELETE |  /companies/{company_id}/serviceinvoices/{id} | Cancelar uma Nota Fiscal de Serviços (NFSE)
+GET  | /companies/{company_id}/serviceinvoices/{id} | Obter os detalhes de uma Nota Fiscal de Serviço (NFSE)
+PUT  | /companies/{company_id}/serviceinvoices/{id}/sendemail | Enviar email para o Tomador com a Nota Fiscal de Serviço (NFSE)
+GET  | /companies/{company_id}/serviceinvoices/{id}/pdf | Download do PDF da Nota Fiscal de Serviço (NFSE)
+GET  | /companies/{company_id}/serviceinvoices/{id}/xml | Download do XML da Nota Fiscal de Serviço (NFSE
+    
+    
 # Autenticação
 
   É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
@@ -88,7 +111,7 @@ Operação aguardando retorno externo 	|operation_waiting |	operation
 Operação efetuada com sucesso |	operation_success |	operation
 Operação com erro 	|operation_error|	operation
 Operação rejeitada |	operation_rejected |	operation
-Arquivo disponível 	asset_avaliable 	asset  
+Arquivo disponível | 	asset_avaliable 	| asset  
   
 ## Formato e método de envio
   
