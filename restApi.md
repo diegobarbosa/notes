@@ -260,6 +260,19 @@ O conteúdo do atributo data irá depender do tipo de evento enviado e respeitar
     }
 
 
+# Rate Limit
+
+Por padrão a API do Fast Notas possui um limite de 120 requisições por minuto por empresa. Para obter o status do limite, consulte os cabeçalhos abaixo no retorno de qualquer chamada à API: Os headers abaixo
+
+- Rate-Limit-Limit: Limite de requisições por minuto
+- Rate-Limit-Remaining: Número de requisições restantes antes de atingir o limite
+- Rate-Limit-Reset: Horário em que o limite será reiniciado no formato Unix Time, fuso horário UTC
+
+Caso o limite de requisições seja atingido (Rate-Limit-Remaining igual à zero), a plataforma irá rejeitar a requisição seguinte e retornar o status HTTP status code 429 - Too Many Requests, incluindo o header Retry-After, que indica o número de segundos restantes para realizar uma nova tentativa.
+
+O limite contempla todos os tipos de requisição, inclusive requisições inválidas do tipo HTTP status code 4xx.
+
+
 ## Boas práticas
 
 Em condições normais de operação dificilmente esse limite será atingido, porém más práticas de integração podem comprometer o limite rapidamente.
