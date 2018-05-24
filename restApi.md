@@ -1,3 +1,9 @@
+# Introdução
+
+O Texto a seguir é um resumo de uma espeficação/documentação/arquitetura/desing de uma api rest. Vária idéias e textos
+foram coletados de https://docs.api.fastnotas.com/.
+
+
 # CURL
 
 É uma ótima ferramenta para testar os endpoints.
