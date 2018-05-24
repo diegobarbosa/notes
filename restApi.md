@@ -73,6 +73,23 @@ Per-Page 	|Objetos por página
 
   Para resolver esse problema, inverte-se a responsabilidade da notificação: O Fast Notas avisará você quando alguma ação ocorrer. Este aviso é realizado através de um HTTP POST que o Fast Notas faz em uma URL que você pode configurar na plataforma. Estes avisos são chamados de webhooks.
   
+  
+## Tipos de Eventos
+Evento |	type |	data
+------| --------| --------
+Documento em processamento |	document_processing |	document
+Documento aguardando retorno externo |	document_waiting |	document
+Documento emitido/arquivado com sucesso |	document_success |	document
+Documento cancelado| 	document_canceled 	|document
+Documento com erro |	document_error |	document
+Documento rejeitado na emissão/arquivamento |	document_rejected |	document
+Operação em processamento |	operation_processing 	|operation
+Operação aguardando retorno externo 	|operation_waiting |	operation
+Operação efetuada com sucesso |	operation_success |	operation
+Operação com erro 	|operation_error|	operation
+Operação rejeitada |	operation_rejected |	operation
+Arquivo disponível 	asset_avaliable 	asset  
+  
 ## Formato e método de envio
   
 Todas as requisições geradas a partir de webhooks são efetuadas com o método POST, com o conteúdo no corpo (body) da requisição no formato JSON, incluindo os seguintes headers:
@@ -94,7 +111,7 @@ A plataforma Fast Notas irá efetuar 15 retentativas de envio caso seu sistema e
 Como mencionado acima, o conteúdo da requisição estará contido em seu no corpo (body), no formato JSON.
 O conteúdo do atributo data irá depender do tipo de evento enviado e respeitará o mesmo formato da API REST.
 
-``   {
+      {
       "event": {
         "type": "document_processing",
         "created_at": "2017-01-19T00:58:20.835Z",
@@ -104,7 +121,7 @@ O conteúdo do atributo data irá depender do tipo de evento enviado e respeitar
           }
         }
       }
-    }``
+    }
 
 
 ## Boas práticas
@@ -141,12 +158,12 @@ Código |	Significado
 
 
   
-- Ferramentas de Documentação de API
-    - https://swagger.io/
-    - https://github.com/lord/slate
+# Ferramentas de Documentação de API
+   - https://swagger.io/
+   - https://github.com/lord/slate
     
     
-- Exemplos de APIs
+# Exemplos de APIs
   - https://documentation.mailgun.com/en/latest/api_reference.html
   - https://docs.api.fastnotas.com/
   - https://api.nfe.io/sandbox/index
