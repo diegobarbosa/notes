@@ -21,13 +21,25 @@
   É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
   Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**
 
+
 - Paginação
 
   Usar parâmetros query para paginação:
   
-   ```curl -X GET https://api.fastnotas.com/v1/items/?page=2&per_page=5 \
+   curl -X GET https://api.mysite.com/v1/clientes/10/telefones/?page=2&per_page=5 \
       -u 'YOUR_API_KEY:' 
-      ```
+     
+
+Parâmetro | Descrição
+------------ | -------------
+**page:** default 1 | Implementação de uma paginação de resultados do objeto
+**per_page:** Default:50 | Retorna n objetos por página
+
+
+
+  Referência: https://docs.api.fastnotas.com/#pagina-o
+
+
 
 - WebHooks
 
