@@ -21,6 +21,14 @@
   É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
   Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**
 
+- Paginação
+
+  Usar parâmetros query para paginação:
+  
+   ```curl -X GET https://api.fastnotas.com/v1/items/?page=2&per_page=5 \
+      -u 'YOUR_API_KEY:' 
+      ```
+
 - WebHooks
 
   São eventos que acontecem dentro da api que notificam via POST uma URL pré determinada pelo cliente.
@@ -40,9 +48,11 @@
 - Exemplos de APIs
   - https://documentation.mailgun.com/en/latest/api_reference.html
   - https://docs.api.fastnotas.com/
+  - https://api.nfe.io/sandbox/index
   - https://stripe.com/docs/api
   - https://bestbuyapis.github.io/api-documentation/
   - https://developers.cimediacloud.com/
+  
     
     
   
