@@ -4,8 +4,8 @@ O Texto a seguir é um resumo de uma espeficação/documentação/arquitetura/de
 foram coletados de https://docs.api.fastnotas.com/.
 
 # Boas práticas
-    - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
-    - asdf
+   - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
+   - https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
  
 # CURL
 
@@ -299,6 +299,7 @@ Código |	Significado
   - https://stripe.com/docs/api
   - https://bestbuyapis.github.io/api-documentation/
   - https://developers.cimediacloud.com/
+  - 
   
     
     
