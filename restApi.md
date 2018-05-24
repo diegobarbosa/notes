@@ -305,6 +305,41 @@ Código |	Significado
 429 - Too Many Requests |	Limite de requisições excedido
 500 - Internal Server Error |	Erro interno do servidor
 
+# Consumindo APIS
+ Em caso de a API retonar um código diferente de 200, um erro, pode-se lançar uma exceção ou retornar um erro com um objeto ApiResponse.
+ Acho que lançar uma exeção não é uma opção válida. É a pior opção, pois interrompe o fluxo prematuramente. 
+ Em um loop teria que colocar um trycatch...
+ 
+ Exemplo de um bom client de API:
+ 
+      APIResult<Pessoa> RetornarPessoa(string codigoPessoa)
+      {
+         ...
+      }
+      
+      var result = RetornarPessoa("123")
+      if(result.Erro)
+      {
+         ///trata o erro
+      }
+      
+      var pessoa = result.Data;
+      
+      ---------------------------------------------------------------------------------------
+      
+      public class APIResult<T> // T pode ser uma classe Pessoa ou um List<Pessoa>
+      {
+         public T Result {get; protected set;}
+         public bool Sucesso {get; protected set;}
+         public bool Erro {get; protected set;}
+         
+         ///Paginação
+         public int PaginaAtual {get; protected set;}
+         public int TotalDePaginas {get; protected set;}
+         public int ItensPorPagina {get; protected set;}
+      
+      }
+   
 
   
 # Ferramentas de Documentação de API
