@@ -13,9 +13,18 @@
     - https://api.mysite.com/v1/alterarEnderecoDoCliente
   
   - Certo:
-    - POST https://api.mysite.com/v1/cliente //no corpo enviar dados em JSON
-    - PUT https://api.mysite.com/v1/cliente/1000/endereco //no corpo enviar dados em JSON
+    - POST https://api.mysite.com/v1/clientes //no corpo enviar dados em JSON
+    - PUT https://api.mysite.com/v1/clientes/1000/endereco //no corpo enviar dados em JSON
     
+# Plural
+Utilize o nome dos recursos no plural.
+  - Errado
+    - https://api.mysite.com/v1/cliente
+    - https://api.mysite.com/v1/cliente/10/fatura
+    
+   - Certo
+      - https://api.mysite.com/v1/clientes
+    - https://api.mysite.com/v1/clientes/10/faturas
     
 # Autenticação
 
