@@ -149,6 +149,7 @@ DELETE |	/companies/:id |	Inativa uma empresa
 PUT |	/companies/:id |	Atualiza os parâmetros de uma empresa
 GET |	/customers |	Retorna todos clientes
 POST |	/customers 	| Cria um cliente
+POST | https://api.stripe.com/v1/charges/{CHARGE_ID}/capture | Captura uma compra
 GET |	/customers/:id |	Retorna um cliente
 GET | /companies/{company_id}/serviceinvoices | Listar as Notas Fiscais de Serviço (NFSE)
 POST |  /companies/{company_id}/serviceinvoices | Emitir uma Nota Fiscal de Serviço (NFSE)
