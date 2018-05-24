@@ -63,15 +63,28 @@ Per-Page 	|Objetos por página
 
   Para resolver esse problema, inverte-se a responsabilidade da notificação: O Fast Notas avisará você quando alguma ação ocorrer. Este aviso é realizado através de um HTTP POST que o Fast Notas faz em uma URL que você pode configurar na plataforma. Estes avisos são chamados de webhooks.
   
-  Formato e método de envio
+    - Formato e método de envio
   
-  Todas as requisições geradas a partir de webhooks são efetuadas com o método POST, com o conteúdo no corpo (body) da requisição no formato JSON, incluindo os seguintes headers:
-HTTP Header | 	Descrição
------------| ---------------
-Content-Type |	application/json; charset=UTF-8
-User-Agent Z	mysSiteHookshot/1.0
+    Todas as requisições geradas a partir de webhooks são efetuadas com o método POST, com o conteúdo no corpo (body) da requisição no formato JSON, incluindo os seguintes headers:
 
-A plataforma espera que sua aplicação responda com o código HTTP 2XX (200, 201, etc) em no máximo 20 segundos. Códigos de redirecionamento (3XX) não serão seguidos e serão considerados como falha.
+HTTP Header | 	Descrição
+------------| ---------------
+Content-Type |	application/json; charset=UTF-8
+User-Agent | 	mysSiteHookshot/1.0
+
+  A plataforma espera que sua aplicação responda com o código HTTP 2XX (200, 201, etc) em no máximo 20 segundos. Códigos de redirecionamento (3XX) não serão seguidos e serão considerados como falha.
+
+
+    - Retentativas
+
+A plataforma Fast Notas irá efetuar 15 retentativas de envio caso seu sistema esteja fora do ar ou responda com um código HTTP diferente de 2xx. As retentativas são enviadas em intervalos progressivos durante aproximadamente 48 horas. Depois desse período a notificação é descartada.
+
+    - Conteúdo da requisição
+
+Como mencionado acima, o conteúdo da requisição estará contido em seu no corpo (body), no formato JSON.
+O conteúdo do atributo data irá depender do tipo de evento enviado e respeitará o mesmo formato da API REST.
+
+
 
   
 - Ferramentas de Documentação de API
