@@ -310,6 +310,8 @@ Código |	Significado
  Acho que lançar uma exeção não é uma opção válida. É a pior opção, pois interrompe o fluxo prematuramente. 
  Em um loop teria que colocar um trycatch...
  
+ Clients de APIs não devem lançar exceções quando um Status Code diferente de 200 for retornado.
+ 
  Exemplo de um bom client de API:
  
       APIResult<Pessoa> RetornarPessoa(string codigoPessoa)
