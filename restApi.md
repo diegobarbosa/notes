@@ -3,11 +3,11 @@
   - https://www.mysite.com/api/v1/
   
 # Versionamento
-- Versionar pela URL é a boa prática. Através de custom http headers podem ocorrer problemas.
+Versionar pela URL é a boa prática. Através de custom http headers podem ocorrer problemas.
   - https://api.mysite.com/v1/
   
 # Verbos HTTP
-- Usar os verbos HTTP e não nomes indicando ações:
+ Usar os verbos HTTP e não nomes indicando ações:
   - Errado:
     - https://api.mysite.com/v1/cadastrarCliente
     - https://api.mysite.com/v1/alterarEnderecoDoCliente
