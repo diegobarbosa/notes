@@ -1,3 +1,13 @@
+# CURL
+
+É uma ótima ferramenta para testar os endpoints.
+
+    curl -D- \
+       -X GET \
+       -H "Authorization: Basic ZnJlZDpmcmVk" \
+       -H "Content-Type: application/json" \
+       "https://api.mysite.com/v1/clientes"
+
 # Formatos de Endereço:
   - https://api.mysite.com/v1/
   - https://www.mysite.com/api/v1/
