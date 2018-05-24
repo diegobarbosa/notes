@@ -14,7 +14,7 @@ Versionar pela URL é a boa prática. Através de custom http headers podem ocor
   
   - Certo:
     - POST https://api.mysite.com/v1/clientes //no corpo enviar dados em JSON
-    - PUT https://api.mysite.com/v1/clientes/1000/enderecos //no corpo enviar dados em JSON
+    - PUT https://api.mysite.com/v1/clientes/1000/enderecos/10 //no corpo enviar dados em JSON
     
 # Plural
 Utilize o nome dos recursos no plural.
