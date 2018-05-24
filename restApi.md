@@ -47,7 +47,10 @@ GET  | /companies/{company_id}/serviceinvoices/{id} | Obter os detalhes de uma N
 PUT  | /companies/{company_id}/serviceinvoices/{id}/sendemail | Enviar email para o Tomador com a Nota Fiscal de Serviço (NFSE)
 GET  | /companies/{company_id}/serviceinvoices/{id}/pdf | Download do PDF da Nota Fiscal de Serviço (NFSE)
 GET  | /companies/{company_id}/serviceinvoices/{id}/xml | Download do XML da Nota Fiscal de Serviço (NFSE
-    
+   
+# Content-Type
+
+Informar o content-type **Content-Type: application/json**
     
 # Autenticação
 
