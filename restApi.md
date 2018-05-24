@@ -27,7 +27,7 @@ Utilize o nome dos recursos no plural.
     - https://api.mysite.com/v1/clientes/10/faturas
     
     
-#Endpoints da API
+# Endpoints da API
 
 Método  |	Endpoint |	Descrição
 --------|--------| ---------------
@@ -40,7 +40,6 @@ PUT |	/companies/:id |	Atualiza os parâmetros de uma empresa
 GET |	/customers |	Retorna todos clientes
 POST |	/customers 	| Cria um cliente
 GET |	/customers/:id |	Retorna um cliente
-
 GET | /companies/{company_id}/serviceinvoices | Listar as Notas Fiscais de Serviço (NFSE)
 POST |  /companies/{company_id}/serviceinvoices | Emitir uma Nota Fiscal de Serviço (NFSE)
 DELETE |  /companies/{company_id}/serviceinvoices/{id} | Cancelar uma Nota Fiscal de Serviços (NFSE)
