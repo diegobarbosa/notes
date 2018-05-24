@@ -17,9 +17,9 @@
     
     
 - Autenticação
-   É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:
-   Authorization: Basic ZnJlZDpmcmVk
-   Onde, ZnJlZDpmcmVk é um hash base64 no formato usuario:senha
+  É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:
+  Authorization: Basic ZnJlZDpmcmVk
+  Onde, ZnJlZDpmcmVk é um hash base64 no formato usuario:senha
 
 - WebHooks
   São eventos que acontecem dentro da api que notificam via POST uma URL pré determinada pelo cliente.
