@@ -3,6 +3,13 @@
 O Texto a seguir é um resumo de uma espeficação/documentação/arquitetura/desing de uma api rest. Vária idéias e textos
 foram coletados de https://docs.api.fastnotas.com/.
 
+# Idempotência 
+É a propriedade que algumas operações têm de poderem ser aplicadas várias vezes sem que o valor do resultado se altere após a aplicação inicial.
+
+Em integrações entre sistemas é importante que o cliente informe um código próprio que identificará o recurso criado no 
+sistema remoto. Um exemplo é o nosso número e número do documento nos boletos. Outro, é código de compra informado
+nos WS de cartão de crédito.
+
 # Boas práticas
    - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
    - https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
