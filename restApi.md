@@ -56,6 +56,22 @@ Per-Page 	|Objetos por página
   Uma notificação tem sucesso quando o cliente retorna o código HTTP 200. Outro código indica erro e a API
   deve ficar tentando comunicar o evento de tempos em tempos aumentando o espaço entre as requisições.
   O próprio RabbitMQ possui mecanismo de Retry.
+  
+  Durante a implementação da API poderão existir momentos em que você precisará aguardar alguma ação externa antes de prosseguir com seu   processo. Suponha que você necessite confirmar a emissão de uma nota fiscal antes de emitir a cobrança. Uma prática desaconselhável     seria, por exemplo, agendar uma consulta diária ao serviço de documentos do Fast Notas para verificar o status de emissao de todas as suas notas fiscais pendentes.
+
+  Além de desperdiçar recursos de processamento, você também sofreria com o atraso entre o momento real da emissão e da consulta do webservice. Isso poderia ser resolvido diminuindo o intervalo entre as consultas, porém dependendo do número de notas fiscais pendentes, este método tornaria-se inviável em pouco tempo.
+
+  Para resolver esse problema, inverte-se a responsabilidade da notificação: O Fast Notas avisará você quando alguma ação ocorrer. Este aviso é realizado através de um HTTP POST que o Fast Notas faz em uma URL que você pode configurar na plataforma. Estes avisos são chamados de webhooks.
+  
+  Formato e método de envio
+  
+  Todas as requisições geradas a partir de webhooks são efetuadas com o método POST, com o conteúdo no corpo (body) da requisição no formato JSON, incluindo os seguintes headers:
+HTTP Header | 	Descrição
+-----------| ---------------
+Content-Type |	application/json; charset=UTF-8
+User-Agent Z	mysSiteHookshot/1.0
+
+A plataforma espera que sua aplicação responda com o código HTTP 2XX (200, 201, etc) em no máximo 20 segundos. Códigos de redirecionamento (3XX) não serão seguidos e serão considerados como falha.
 
   
 - Ferramentas de Documentação de API
