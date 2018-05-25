@@ -294,6 +294,16 @@ If your webhook script performs complex logic, or makes network calls, it's poss
 
 Webhook endpoints might occasionally receive the same event more than once. We advise you to guard against duplicated event receipts by making your event processing idempotent. One way of doing this is logging the events you've processed, and then not processing already-logged events. Additionally, we recommend verifying webhook signatures to confirm that received events are being sent from Stripe.
 
+### Webhooks and API versions
+
+The structure of an Event object sent in a webhook is dictated by the API version in your account settings at the time of the event's occurrence. For example, if your account is set to an older API version, such as 2015-02-16, and you change the API version for a specific request via versioning, the Event object generated and sent to your endpoint is still based upon the 2015-02-16 API version.
+
+Event objects can never be changed once created. For example, if a charge is updated, the original charge event remains unchanged. This means that subsequent updates to your account's API version do not retroactively alter existing Event objects. Fetching older events by calling /v1/events using a newer API version also has no impact on the structure of the received events.
+
+You can set test webhook endpoints to either your API version in use or the most current API version. The Event sent to the webhook URL is structured for the endpoint's specified version. You can use endpoint versioning to test the latest API version before upgrading to it.
+
+
+
 ### Evite polling
 
 Polling é o nome do procedimento usado para buscar o status de determinada informação em intervalos de tempo consecutivos. Sabemos que é comum implementar rotinas diárias de consulta de status. Enquanto este procedimento funciona satisfatoriamente com um número baixo de registros, você poderá ultrapassar o limite de requisições caso o número de consultas aumente.
