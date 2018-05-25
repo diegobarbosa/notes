@@ -281,10 +281,18 @@ Caso o limite de requisições seja atingido (Rate-Limit-Remaining igual à zero
 
 O limite contempla todos os tipos de requisição, inclusive requisições inválidas do tipo HTTP status code 4xx.
 
+Em condições normais de operação dificilmente esse limite será atingido, porém más práticas de integração podem comprometer o limite rapidamente.
 
 ## Boas práticas
 
-Em condições normais de operação dificilmente esse limite será atingido, porém más práticas de integração podem comprometer o limite rapidamente.
+
+### Stripe 
+
+Before going live, test that your webhook is working properly. You can do so by sending dummy test events from the Webhooks settings pane. To do this, first enable your Dashboard's Viewing test data option, then add the endpoint to which test events should be sent. Next, click that endpoint's row to view details, and finally, click the send a test webhook button. Understand that because these are dummy, test events, they will not map to real customers, invoices, charges, or other objects in your account.
+
+If your webhook script performs complex logic, or makes network calls, it's possible that the script would time out before Stripe sees its complete execution. For that reason, you might want to have your webhook endpoint immediately acknowledge receipt by returning a 2xx HTTP status code, and then perform the rest of its duties.
+
+Webhook endpoints might occasionally receive the same event more than once. We advise you to guard against duplicated event receipts by making your event processing idempotent. One way of doing this is logging the events you've processed, and then not processing already-logged events. Additionally, we recommend verifying webhook signatures to confirm that received events are being sent from Stripe.
 
 ### Evite polling
 
