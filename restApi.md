@@ -10,6 +10,9 @@ Em integrações entre sistemas é importante que o cliente informe um código p
 sistema remoto. Um exemplo é o nosso número e número do documento nos boletos. Outro, é código de compra informado
 nos WS de cartão de crédito.
 
+O Stripe permite enviar um parâmetro no Header Http contendo o Idempotency Id. Esse Id é válido por 24 horas. Todas as requisições com o mesmo Id, nesse período de 24 horas, serão recusadas.
+
+
 # Boas práticas
    - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
    - https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api
