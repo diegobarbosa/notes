@@ -210,6 +210,14 @@ Per-Page 	|Objetos por página
 
   Para resolver esse problema, inverte-se a responsabilidade da notificação: O Fast Notas avisará você quando alguma ação ocorrer. Este aviso é realizado através de um HTTP POST que o Fast Notas faz em uma URL que você pode configurar na plataforma. Estes avisos são chamados de webhooks.
   
+  A Stripe tenta uma nova chamada a cada 1 hora durante 3 dias. Eles também logam a quantidade de chamadas ao endpoint, quando foi, 
+  e os dados de retorno de erro/sucesso.
+  
+  Uma forma de implementar WebHooks é através de DomainEvents. Que são objetos que possuem os dados pertinentes ao evento: 
+  data da ocorrência, nome, valor... Cada evento é representado por uma classe distinta. Os Domain Events são salvos 
+  em uma única tabela juntamente com a transação atual. Um serviço pode fazer pooling na tabela e enviar esses eventos para 
+  os interessados.  Pode colocar esses eventos em uma fila (RabbitMQ). 
+  
   
 ## Tipos de Eventos
 Evento |	type |	data
