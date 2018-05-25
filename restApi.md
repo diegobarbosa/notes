@@ -197,6 +197,8 @@ Informar o content-type **Content-Type: application/json**
 
 # Paginação
 
+## Dados de Paginação no Header Http
+
   Usar parâmetros query para paginação:
   
    curl -X GET https://api.mysite.com/v1/clientes/10/telefones/?page=2&per_page=5 \
@@ -218,6 +220,30 @@ Per-Page 	|Objetos por página
 
   Referência: https://docs.api.fastnotas.com/#pagina-o
 
+## Dados de Paginação no corpo da resposta
+
+Outra opção é retornar os dados da paginação no corpo da resposta.
+Referência: https://bestbuyapis.github.io/api-documentation/#cursor-marks
+
+      {
+        "nextCursorMark": "AoNeDQhAhoq2MnByb2R1Y3RfMTE0NjYzNV91cw==",
+        "total": 49911,
+        "totalPages": 500,
+        "queryTime": "0.037",
+        "totalTime": "0.362",
+        "partial": false,
+        "canonicalUrl": "/v1/products(type=\"HardGood\")?show=sku,name,salePrice&pageSize=100&cursorMark=*&format=json&apiKey=YourAPIKey",
+        "products": [
+          {
+            "sku": 5477500,
+            "name": "Amazon - Fire TV Stick with Alexa Voice Remote - Black",
+            "salePrice": 39.99
+          },
+          {
+            "sku": 4397400,
+            "name": "Google - Chromecast - Black",
+            "salePrice": 35
+          },
 
 
 # WebHooks
