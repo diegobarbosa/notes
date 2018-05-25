@@ -33,6 +33,9 @@ Toda requisição a APIs de terceiros de ser logada em uma tabela própria. Ante
 
 Como logar várias tentativas de integração e manter um registro atual? Como manter um log e um reflexo da integração?
 
+Acho que a solução aqui é ter uma tabela genérica de logs e uma tabela específica para a entidade(endpoint). 
+A solução é Comitar a tabela genérica e a tabela específica, chamar o endpoint e atualizar o BD novamente.
+
 
 # Boas práticas
    - https://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/
