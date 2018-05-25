@@ -14,7 +14,12 @@ O Stripe permite enviar um parâmetro no Header Http contendo o Idempotency Id. 
 
 # GUIDs
 
-O stripe não permite retornar uma transação por correlation id (código da venda por exemplo). Todas as requisições de entidades são feitas pelo id que o Stripe gera.
+O stripe não permite retornar uma transação por correlation id (código da venda por exemplo). Todas as requisições de entidades são feitas pelo id que o Stripe gera. Isso é um problema. Pode acontecer de uma transação de cadastro ocorrer com sucesso no Stripe e não ser possível guardar o ID deles no banco de dados. A requisição pode ser encerrada após o sucesso no stripe, o banco de dados pode falhar no momento da transação. Para contornar esse problema o Stripe permite o uso de um **Idempotence ID** para todas as requisições, vide regras da seção Idempotência.
+
+O problema é nossa aplicação tentar realizar um cadastro, o dado ser salvo no stripe, nossa aplicação não conseguir guardar o ID e não ocorrer novas tentativas de cadastro. O stripe conterá um cadastro fantasma sem relação no o nosso BD.
+
+Uma solução é, periodicamente, tentar sincronizar os últimos cadastros. Também é ter um campo na tabela indicando que houve uma tentativa de cadastro, quando o stripe retornasse sucesso o status seria atualizado para cadastrado_com_sucesso. Períodicamente o sistema checaria o status dessas integrações.
+
 
 O formato de ids utilizado por eles é interessante. ch_asdfad234safdgasf (id de uma charge), tr_ahjfhj456465dfg (id de uma transação),
 cl_jkdghDFEFGDasdfadsf (id de um cliente). 
