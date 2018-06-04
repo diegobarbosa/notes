@@ -5,6 +5,10 @@ Ser um clone do GoodReads
 
 ## Cadastro de Usuário
 
+## Buscar Livros
+
+## Exibir Livro
+
 ## Minha Lista de Livros
   - Listar meus livros
   
