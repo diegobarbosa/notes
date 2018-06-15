@@ -36,6 +36,17 @@ O Charset padrão utilizado para todas as chamadas à API é o UTF-8, em caso de
 O tráfego de dados em uma API, pode utilizar os formatos FORM, JSON e o PDF, dependendo do serviço consumido. Respectivamente a negociação de conteúdo deve levar em consideração o content type application/x-www-form-urlencoded para FORM, application/json para JSON e application/pdf para PDFs, tanto para entrada quanto para saída de dados. 
 
 
+# Padronização de Dados
+
+Para o correto funcionamento do serviço alguns dados são padronizados como:
+
+Tipo 	  | Formato  | 	Exemplo 	 |
+--------|----------| -------------|
+Datas   |"aaaa-mm-dd"| 	"2014-07-01" |	Todas as datas devem ser informadas seguindo esse padrão.
+Valores Monetários| 	"0000.00" | "1.83","3095.72","5200459.37" | 	Todos os valores devem possuir apenas duas casas decimais, sendo assim no exemplo ao lado: "5200459.37"; que normalmente é representado como R$ 5.200.459,37, não deve conter vírgula e no lugar dela apenas um ponto representa a parte fracionária. Todos os valores, são, por padrão, considerados como valores em Real R$. 
+
+
+
 # Integrando com APIs de Terceiros
 
 Toda requisição a APIs de terceiros de ser logada em uma tabela própria. Antes de enviar os dados, deve-se guardar (COMITAR) todos os dados enviados na tabela com status CADASTRADO. Deve-se fazer a requisição e guardar o resultado: ERRO com o erro retornado ou SUCESSO.
