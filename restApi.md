@@ -258,6 +258,25 @@ Informar o content-type **Content-Type: application/json**
   Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**. 
   Assim, **usuario** será o token de acesso, ex.: **api-key_ASDasfd12_3asdfRF78** e a **senha** pode ser qualquer outro valor 
   (pode ser **x**, **senha**, **pass** ), uma vez que alguns clients/mecanismos de autenticação basic podem reclamar da ausência de senha.
+  
+  No caso, um usuário do Facebook, Twitter possui um login e senha que acessam o sistema web. O sistema (Facebook/Twitter) permite o usuário gerar um token para acesso via api.
+  
+  Uma função interessante é fazer uma SPA autenticando no browser no serviço de Autenticação. E esse serviço retorna um token 
+  de acesso temporário, com expiração, que a SPA vai enviar em toda a requisição. Dessa forma teremos uma aplicação API first.
+  
+  Resumindo, 
+  - É possível autenticar via login e senha que retorna um token de acesso temporário, para o SPA.
+  - É possível gerar um token que não expira nunca, através da interface web.
+  - É possível gerar um token para que uma aplicação de terceiros tenha acesso a web api com as minhas credenciais
+  sem que eu tenha que disponibilizar meu login e senha. A qualquer momente posso bloquear o acesso a aplicação a qual
+  dei permissão.
+  
+
+## OAuth 2: Permitindo que aplicativos acessem sua conta
+ 
+ Implementar
+
+## Token autorization
 
 
 # Paginação
