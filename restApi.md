@@ -193,8 +193,13 @@ Informar o content-type **Content-Type: application/json**
     
 # Autenticação
 
-  É feita com HttpBasic. Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
-  Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**
+  Em um sistema, seja web ou api ou mobile, um usuário terá um login e senha. É boa prática que o usuário
+  consiga gerar um token para acesso a API. 
+  Com esse token a autenticação é feita com HttpBasic. 
+  Deve-se enviar um Header http no seguinte formato:  **Authorization: Basic ZnJlZDpmcmVk** .
+  Onde, **ZnJlZDpmcmVk** é um hash base64 no formato **usuario:senha**. 
+  Assim, **usuario** será o token de acesso, ex.: **api-key_ASDasfd12_3asdfRF78** e a **senha** pode ser qualquer outro valor 
+  (pode ser **x**, **senha**, **pass** ), uma vez que alguns clients/mecanismos de autenticação basic podem reclamar da ausência de senha.
 
 
 # Paginação
