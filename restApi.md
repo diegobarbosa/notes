@@ -53,7 +53,7 @@ O SandBox não precisa ter https e um token de produção não deve acessar o Sa
 
 # Charset
 
-Escolher um padrão de charset ou deixar o client escolher?
+Escolher um padrão de charset ou deixar o client escolher? Acho que escolhe um padrão é a melhor opção. No caso UTF-8.
 
 You must also pass the character set after the format, separated by a semicolon. The HTTP 1.1 specification states the default for this is ISO-8859-1, which is probably not what you want. For example, a full header for UTF8-encoded data would look like one of these:
 
@@ -76,9 +76,12 @@ Para o correto funcionamento do serviço alguns dados são padronizados como:
 
 Tipo 	  | Formato  | 	Exemplo 	 | Descrição
 --------|----------| -------------| -------------
-Datas   |"aaaa-mm-dd"| 	"2014-07-01" |	Todas as datas devem ser informadas seguindo esse padrão.
+Datas   |"aaaa-mm-dd"/"aaaa-mm-ddThh:mm"| 	"2014-07-01"/2007-04-05T14:30 |	Todas as datas devem ser informadas seguindo esse padrão. O sistema recebe/retorna data e hora ou somente data
 Valores Monetários| 	"0000.00" | "1.83","3095.72","5200459.37" | 	Todos os valores devem possuir apenas duas casas decimais, sendo assim no exemplo ao lado: "5200459.37"; que normalmente é representado como R$ 5.200.459,37, não deve conter vírgula e no lugar dela apenas um ponto representa a parte fracionária. Todos os valores, são, por padrão, considerados como valores em Real R$. 
 
+# Retorno de Erros
+
+Implementar
 
 
 # Integrando com APIs de Terceiros
