@@ -53,11 +53,21 @@ O SandBox não precisa ter https e um token de produção não deve acessar o Sa
 
 # Charset
 
+Escolher um padrão de charset ou deixar o client escolher?
+
+You must also pass the character set after the format, separated by a semicolon. The HTTP 1.1 specification states the default for this is ISO-8859-1, which is probably not what you want. For example, a full header for UTF8-encoded data would look like one of these:
+
+    Content-Type: application/x-www-form-urlencoded; charset=UTF8
+    Content-Type: application/json; charset=UTF8
+
 O Charset padrão utilizado para todas as chamadas à API é o UTF-8, em caso de dúvidas consulte a RFC3629.
+
 
 # Content Type
 
-O tráfego de dados em uma API, pode utilizar os formatos FORM, JSON e o PDF, dependendo do serviço consumido. Respectivamente a negociação de conteúdo deve levar em consideração o content type application/x-www-form-urlencoded para FORM, application/json para JSON e application/pdf para PDFs, tanto para entrada quanto para saída de dados. 
+O tráfego de dados em uma API, pode utilizar os formatos FORM, JSON, XML e o PDF, dependendo do serviço consumido. Respectivamente a negociação de conteúdo deve levar em consideração o content type application/x-www-form-urlencoded para FORM, application/json para JSON e application/pdf para PDFs, tanto para entrada quanto para saída de dados. 
+
+O Cliente deve informar o content type desejado.
 
 
 # Padronização de Dados
