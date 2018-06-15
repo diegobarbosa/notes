@@ -40,8 +40,8 @@ O tráfego de dados em uma API, pode utilizar os formatos FORM, JSON e o PDF, de
 
 Para o correto funcionamento do serviço alguns dados são padronizados como:
 
-Tipo 	  | Formato  | 	Exemplo 	 |
---------|----------| -------------|
+Tipo 	  | Formato  | 	Exemplo 	 | Descrição
+--------|----------| -------------| -------------
 Datas   |"aaaa-mm-dd"| 	"2014-07-01" |	Todas as datas devem ser informadas seguindo esse padrão.
 Valores Monetários| 	"0000.00" | "1.83","3095.72","5200459.37" | 	Todos os valores devem possuir apenas duas casas decimais, sendo assim no exemplo ao lado: "5200459.37"; que normalmente é representado como R$ 5.200.459,37, não deve conter vírgula e no lugar dela apenas um ponto representa a parte fracionária. Todos os valores, são, por padrão, considerados como valores em Real R$. 
 
