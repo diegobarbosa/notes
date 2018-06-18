@@ -4,6 +4,7 @@ A seguir estão diversos patterns que tenho usado em meu dia-a-dia.
 
 
 ## CQRS / CQS / Commands and Queryes
+
 Toda aplicação, seja web, seja command line, seja desktop, seja mobile consiste basicamente de: informar um input ao programa, o programa interpreta e executa o comando, esse comando, executa uma operação em memória (algum calculo)  ou interage com I/O (lê ou escreve de alguma fonte de dados: FileSystem, Banco de dados, Queue, ApiWeb...)
 
 [http://cdn.guru99.com/images/stories/blackbox.png]
@@ -21,3 +22,55 @@ Poderiamos escrever nossos programas diretamente dentro dessas actions/eventos/s
 Para isso podemos lançar mão dos Patterns Command e Mediator.
 
 O Command
+
+MediatR
+
+Task Based UI
+
+Feature Folders / Slices, not Layers
+*Colocar imagens
+
+Repostiory
+
+Qyery Pattern
+
+Service Pattrern
+
+Double Dispatch
+
+Agregate Root
+
+Duplicacao de dados e Value object
+
+Factory Method
+
+Strategy
+
+Template Method
+
+Centralizador de Configurações
+
+Ioc e DI
+
+
+
+Adapter: Xml, Email, Bibliotecas
+
+Programa do Boleto
+Recebe todos os dados de um boleto:
+conta corrente
+valor
+vencimento
+credor e pagador
+há duplicação de dados
+cancelar
+como lidar com alteração dos dados? Valor e vencimento
+
+
+Contas a receber
+duplicação de dados
+
+
+Programa de NFS
+
+
