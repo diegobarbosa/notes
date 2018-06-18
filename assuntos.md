@@ -18,8 +18,27 @@ Tools
   - https://github.com/ReactTraining/react-broadcast
   - https://blog.revathskumar.com/2015/05/react-interation-with-components.html
   - https://www.sderosiaux.com/2015/02/12/how-to-communicate-between-react-components/
+  - https://reactpatterns.com/#container-component
+  - Google: react big parent component
+  - https://itnext.io/acceptance-test-driven-test-with-react-redux-part-1-7ae8cb4fab00
+
+DevOps
+  - jenkins
+  - CakeBuild
+  - Git
+  - Doker
 
 
+Agile
+  - https://trello.com/b/6otslC4i/template-board-agile-with-trello
+  - TDD
+  - https://blog.testlodge.com/user-story-vs-requirements/
+  - https://dannorth.net/whats-in-a-story/
+  - https://rubygarage.org/blog/clear-acceptance-criteria-and-why-its-important
+  - as a i want so that given when then
+  - Gherkin
+  - https://www.tutorialspoint.com/scrum/scrum_user_stories.htm
+  
 System Integration
   - quartz-scheduler.net
   - hangfire.io/
@@ -40,9 +59,22 @@ System Integration
     - OutBox Pattern
   - Background Jobs
     - https://www.netguru.co/codestories/better-way-to-log-your-background-jobs
-    - Common Patterns for Queueing
-      - Sending email
-      - Processing images
+    - https://blog.codeship.com/how-to-use-rails-active-job/
+      - Common Patterns for Queueing
+        - Sending email
+        - Processing images
+        - User uploaded content
+        - Generating reports
+        - Talking with external APIs
+  - Bulk Insert: blog.codeship.com/speeding-up-bulk-imports-in-rails/
+  - https://martinfowler.com/bliki/EditingPublishingSeparation.html
+  
+- To Read
+  - https://martinfowler.com
+ 
+- Html5
+- CSS 3
+  
+  
 
 
-- TDD
