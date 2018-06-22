@@ -27,6 +27,8 @@ DevOps
   - CakeBuild
   - Git
   - Doker
+    - https://github.com/wsargent/docker-cheat-sheet
+    - https://serverfault.com/questions/661909/the-right-way-to-keep-docker-container-started-when-it-used-for-periodic-tasks
 
 
 Agile
@@ -40,6 +42,19 @@ Agile
   - https://www.tutorialspoint.com/scrum/scrum_user_stories.htm
   
 System Integration
+  - bpmn
+  - webservices mesh vs sidecar
+  - http://netcoders.com.br/melhores-praticas-de-bpmn/
+  - http://www.bpm-guide.de/2015/04/10/from-push-to-pull-external-tasks-in-bpmn-processes/
+  - http://dev.iron.io/mq/3/reference/push_queues/
+  - http://queues.io/
+  - https://docs.particular.net/nservicebus/outbox/
+  - https://jimmybogard.com/refactoring-towards-resilience-evaluating-coupling/
+  - https://stackify.com/java-thread-pools/
+  - http://blog.codepipes.com/testing/software-testing-antipatterns.html
+  - https://sourcemaking.com/design_patterns
+  - https://github.com/rShetty/awesome-distributed-systems
+  - blocking io vs non blocking io
   - quartz-scheduler.net
   - hangfire.io/
   - Rabbit MQ
@@ -74,6 +89,7 @@ System Integration
  
 - Html5
 - CSS 3
+  
   
   
 
