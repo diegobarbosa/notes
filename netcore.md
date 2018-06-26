@@ -1,0 +1,5 @@
+- https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.1&tabs=basicconfiguration
+- https://simpleinjector.readthedocs.io/en/latest/aspnetintegration.html
+- https://andrewlock.net/exploring-program-and-startup-in-asp-net-core-2-preview1-2/
+- http://mattwarren.org/2018/01/22/Resources-for-Learning-about-.NET-Internals/
+- https://medium.com/@indy_singh/its-not-your-code-vol-i-c06fac8784df
