@@ -1,0 +1,4 @@
+- www.reddit.com/r/programming
+- www.dev.tube
+- www.infoq.com
+- www.news.ycombinator.com/
