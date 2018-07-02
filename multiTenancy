@@ -1,3 +1,7 @@
+## Master-Slave
+	- Single Master (one only Write) ==> Multiple Slaves (only Read)
+	- Multi Master (multiple Write) ==> Multiple Slaves (only Read)
+	
 ## Types of Partitioning
 	- Divide a Table
 		- Horizontal Partitioning
