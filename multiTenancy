@@ -1,3 +1,10 @@
+## Types of Partitioning
+	- Divide a Table
+		- Horizontal Partitioning
+		- Vertical Partitioning
+	- Divide a data set / schema
+		 - Functional Partitioning: Store Front, Search, Carrinho de Compras
+		 
 
 ## Shard
 A database shard is a horizontal partition of data in a database or search engine. 
@@ -49,7 +56,9 @@ Vários clientes usando um mesmo serviço: SASS
 				- Pode começar com uma única máquina
 
 		- Microservices: Divisão pode funcionalidade
-      - Mais escalável
+      			- Load Balance: Com suporte a script. Permite criar regras mais robustas e complexas, modificar a requisição e passar para 
+a app correta.
+			- Mais escalável
 			- Cada funcionalidade (frente de loja, busca de produto, carrinho, checkout...) possui seu próprio sistema/microservice
 			- Dentro de cada microsevice podemos ter uma estratégia diferente de armazenamento de dados:
 				- Cada tabela ter o seu próprio tenant_id
@@ -59,3 +68,5 @@ Vários clientes usando um mesmo serviço: SASS
         
 - Referências
   - https://www.citusdata.com/blog/2017/08/28/five-data-models-for-sharding/
+  - https://www.slideshare.net/squadette/evan-ellis-tumblr-massively-sharded-mysql
+  
