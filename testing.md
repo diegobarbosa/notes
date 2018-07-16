@@ -2,6 +2,7 @@
 Testa o comportamento de uma classe/método de forma isolada. Testa métodos, construtores e propriedades 
 (que também são uma forma de método). 
 Métodos vão alterar a estrutura interna do objeto e/ou executar uma operação e retornar um valor.
+
 Cada cenário de teste deve ter um contexto (entradas e saídas) bem específico.
 Se uma classe A depende de outra classe B, essa outra classe B deve ser mockada. Pois, os cenários de testes da classe A devem ter
 um contexto bem específico, e não deve ficar a revelia de bugs ou inconsistências ou intermitências 
