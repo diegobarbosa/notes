@@ -3,11 +3,12 @@
 Java SE Development Kit 8u112 on a 64-bit Windows 7 or Windows 8
 Set the following user environment variables (== environment variables of type user variables)
 
-JAVA_HOME : C:\Program Files\Java\jdk1.8.0_112
-JDK_HOME  : %JAVA_HOME%
-JRE_HOME  : %JAVA_HOME%\jre
-CLASSPATH : .;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib
-PATH      : your-unique-entries;%JAVA_HOME%\bin (make sure that the longish your-unique-entries does not contain any other references to another Java installation folder.
+- JAVA_HOME : C:\Program Files\Java\jdk1.8.0_112
+- JDK_HOME  : %JAVA_HOME%
+- JRE_HOME  : %JAVA_HOME%\jre
+- CLASSPATH : .;%JAVA_HOME%\lib;%JAVA_HOME%\jre\lib
+- PATH      : your-unique-entries;%JAVA_HOME%\bin (make sure that the longish your-unique-entries does not contain any other references to another Java installation folder.
+
 Notice that these environment variables are derived from the "root" environment variable JAVA_HOME. This makes it easy to update your environment variables when updating the JDK. Just point JAVA_HOME to the fresh installation.
 
 
@@ -20,4 +21,4 @@ http://gedankenverlust.blogspot.de/2012/05/java-environment-variables-definitive
 
 source: https://stackoverflow.com/questions/1672281/environment-variables-for-java-installation
 
-Thanks Stack Overflow
+Thanks Stack Overflow !!!
