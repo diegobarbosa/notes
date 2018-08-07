@@ -56,6 +56,23 @@ Ioc e DI
 
 Adapter: Xml, Email, Bibliotecas
 
+- Clean Code
+  - Object Calisthenics
+  - Não usar else: early return
+  - Primitive obsession: cpf; cnpj
+  - Classe para representar colecao q herda de uma lista para implementar filtros e outros comportamentos:  
+  ''class Titulos: List<Titulo>
+  {
+  
+    List<Titulo> Liquidado(){}
+  
+  }''
+  - Cache é uma responsabilidade que deve ficar em uma classe separada. A classe cliente deve chamar o cache e o cache a classe alvo. Ex. Cache de string de conexao; de arquivo de configuração; etc...
+
+
+
+
+
 Programa do Boleto
 Recebe todos os dados de um boleto:
 conta corrente
