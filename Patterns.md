@@ -52,9 +52,9 @@ Centralizador de Configurações
 
 Ioc e DI
 
-
-
 Adapter: Xml, Email, Bibliotecas
+
+
 
 - Clean Code
   - Object Calisthenics
