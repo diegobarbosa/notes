@@ -41,4 +41,5 @@ Default locale: en_US, platform encoding: Cp1252
 OS name: "windows 8.1", version: "6.3", arch: "amd64", family: "windows"  
 C:\Users\mkyong>
 
+*fonte: https://www.mkyong.com/maven/how-to-install-maven-in-windows/
 
