@@ -52,7 +52,8 @@ for(initializer; condition; iterator)
 Use when the list has a unknow size
 
 # while
-Condition variable must be declare outside while
+- Condition variable must be declare outside while. 
+- Only executes if condition is true, may neve execute.
 
 ```
 // while statement syntax
@@ -61,7 +62,18 @@ while(condition)
   statement;
 }
 ```
+# do-while
+- Condition variable must be declare outside while. 
+- Executes only time at least.
 
+```
+// do-while loop syntax
+do
+{
+    statement;
+} while (condition);  // (";" must be informed)
+
+```
 
 
 
