@@ -90,6 +90,8 @@ enum Months : byte {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec}
 ```
 
 ## C# Modifiers
+- readonly: Read-only members can be assigned only during declaration or in a class constructor.
+No other means of changing or assigning a value to that member are permitted.
 - internal: Allows access only within files in the same .NET assembly
 - extern: Used to indicate that the method has been declared and implemented externally.
 You might use this with imported DLLs or external assemblies.
