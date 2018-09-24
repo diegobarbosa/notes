@@ -110,3 +110,26 @@ the member variables with their default values.
 
 **Default constructors are used only when no other constructor is called or
 none exist.**
+
+# Overloaded methods
+Méthods with same name but different signatures
+
+# abstract class and overriden methods
+```
+ public abstract class Person
+ {
+    public abstract void Display();
+ }
+ 
+ public class TallPerson : Person
+ {
+    public override void Display()
+    {
+    
+    }
+ }
+
+```
+ **A non abstract class can´t declare a abstract method**
+ 
+ **It´s not possible to instantiate a abstract class. If one try visual studio will give a error.**
