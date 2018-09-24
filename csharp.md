@@ -75,5 +75,26 @@ do
 
 ```
 
+## Enumerations
+```
+// enum called Months, using default initializer
+  enum Months {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec};
+
+// enum call Months, using an overidden initializer
+  enum Months {Jan = 1, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec};
+  
+  // using a non-default data type for an enum
+enum Months : byte {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sept, Oct, Nov, Dec};
+  
+  
+```
+
+## C# Modifiers
+- internal: Allows access only within files in the same .NET assembly
+- extern: Used to indicate that the method has been declared and implemented externally.
+You might use this with imported DLLs or external assemblies.
+- sealed:  Applied to classes. Sealed classes cannot be inherited.
+- unsafe: Using the unsafe keyword declares a context that is not safe in terms of memory management.
+- volatile: When this modifier is applied to a field, the field can be modified by components other than your code. Examples might be the operating system.
 
 
