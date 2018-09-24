@@ -99,4 +99,14 @@ You might use this with imported DLLs or external assemblies.
 - unsafe: Using the unsafe keyword declares a context that is not safe in terms of memory management.
 - volatile: When this modifier is applied to a field, the field can be modified by components other than your code. Examples might be the operating system.
 
+## Constructors
 
+A constructor is a method but includes no return type, not even void. To include
+a return type in a constructor is improper syntax and will generate a compiler warning.
+In the Student class code, there are two constructors provided. One is a nondefault constructor that
+accepts three string values and uses them to initialize the member variables. The second is a default constructor that includes no statements and takes no arguments. This is the type of constructor that
+the compiler generates if no other constructors are created by the developer. This constructor initializes
+the member variables with their default values.
+
+**Default constructors are used only when no other constructor is called or
+none exist.**
