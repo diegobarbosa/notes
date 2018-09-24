@@ -17,3 +17,51 @@
 - >= Greater than or equal expr1 >= expr2
 - == Equality expr1 == expr2
 - != Not equal expr1 != expr2
+
+## switch
+```
+// switch statement syntax
+switch (condition)
+{
+  case 1:
+    statement1;
+  break;
+  case 2:
+    statement2;
+  break;
+  case 3:
+    statement3;
+  break;
+  default: // OPCIONAL
+    defaultStatement;
+  break;
+}
+```
+
+## for
+used when the list size is know in advance
+
+```
+for(initializer; condition; iterator)
+{
+  statement(s);
+}
+```
+
+#foreach
+Use when the list has a unknow size
+
+# while
+Condition variable must be declare outside while
+
+```
+// while statement syntax
+while(condition)
+{
+  statement;
+}
+```
+
+
+
+
