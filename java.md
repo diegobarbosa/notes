@@ -1,5 +1,7 @@
 # Install Java
 
+https://jdk.java.net/
+
 Java SE Development Kit 8u112 on a 64-bit Windows 7 or Windows 8
 Set the following user environment variables (== environment variables of type user variables)
 
@@ -11,6 +13,8 @@ Set the following user environment variables (== environment variables of type u
 
 Notice that these environment variables are derived from the "root" environment variable JAVA_HOME. This makes it easy to update your environment variables when updating the JDK. Just point JAVA_HOME to the fresh installation.
 
+java -version
+javac -version
 
 http://gedankenverlust.blogspot.de/2012/05/java-environment-variables-definitive.html
 
@@ -42,4 +46,10 @@ OS name: "windows 8.1", version: "6.3", arch: "amd64", family: "windows"
 C:\Users\mkyong>
 
 *fonte: https://www.mkyong.com/maven/how-to-install-maven-in-windows/
+
+## SPRING Tools Suite
+
+https://spring.io/tools
+
+
 
