@@ -51,5 +51,5 @@ C:\Users\mkyong>
 
 https://spring.io/tools
 
-
+Pom: Tag parent: Herda as configurações de outro POM
 
