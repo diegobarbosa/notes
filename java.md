@@ -53,3 +53,17 @@ https://spring.io/tools
 
 Pom: Tag parent: Herda as configurações de outro POM
 
+Gerar um Jar para colocar em ambiente ou executar:
+- Botão direito no Projeto
+- Run as -> Maven Build
+- goals: clean package (limpa o build e gera o package)
+
+na pasta target do projeto
+java -jar nome do projeto
+
+na aba boot dashboard, clicar no nome do projeto e depois em Start na mesma janela
+
+Add DevTools: botão direito no projeto-> sprint -> add string tools
+
+Botão direito: Sprint -> edit startes
+
