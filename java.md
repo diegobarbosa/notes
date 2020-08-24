@@ -67,3 +67,46 @@ Add DevTools: botão direito no projeto-> sprint -> add string tools
 
 Botão direito: Sprint -> edit startes
 
+
+Botão direito no projeto--> Spring -> Edit Starters -> JPA e Mysql Driver
+src/main/resources/aplication.properties
+https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-reference.html
+
+
+Add ao maven Flyway
+criar a pasta classpath:db/migration em resources
+Criar migration tem o V001__ o script não é executado
+
+
+Jakarta.ee : Site
+
+Jakarta Persistance: JPA. ta dentro do spring-boot-starter-data-jpa
+javakarta.persitence-api
+nhibernate-core é implementacao do JPA
+spring-data-jpa é uma biblioteca auxiliar, não é implementacao ja JPA
+
+botão direito na classe cliente: source-> Generate equals e hashcode
+
+spring.io/projects
+
+spring-boot-starter-web
+	spring-boot-starter-validation
+		Jakarta Bean Validation: Ja está dentro do Spring
+		jakarta.validation-api: Interface--> implementado por Hibernate-validador
+
+
+
+Add Spring Validation
+
+no POM-> Dependency hierarchy
+
+resources/messages.properties: arquivo para traduzir as mensagens
+é utilizado junto com o MessageSource
+
+Configurar Eclipe para UTF8: Window-> Proferences-> Content Types-> Text-> Java properties files
+Clicar em Update
+
+No search.maven.org procurar por: ModelMapper. É o automapper do java
+
+
+"Maven" -> "Update Project.." -> selecione a opção "Update Snapshots and Releases".
