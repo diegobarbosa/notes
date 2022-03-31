@@ -51,6 +51,10 @@ C:\Users\mkyong>
 
 https://spring.io/tools
 
+Baixar o jar e instalar com :
+
+java -jar zipper.jar
+
 Pom: Tag parent: Herda as configurações de outro POM
 
 Gerar um Jar para colocar em ambiente ou executar:
